@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Hotel</title>
+    <script>
+        function validarHotel() {
+            const nombre = document.getElementById("nombre").value;
+            const ubicacion = document.getElementById("ubicacion").value;
+            const habitaciones = document.getElementById("habitaciones_disponibles").value;
+            const tarifa = document.getElementById("tarifa_noche").value;
+
+            if (!nombre || !ubicacion || !habitaciones || !tarifa) {
+                alert("Por favor completa todos los campos.");
+                return false;
+            }
+
+            if (isNaN(habitaciones) || isNaN(tarifa)) {
+                alert("Las habitaciones y la tarifa deben ser números.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Registrar Hotel</h1>
+    <form action="4_procesar_hotel.php" method="post" onsubmit="return validarHotel();">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required><br>
+
+        <label for="habitaciones_disponibles">Habitaciones Disponibles:</label>
+        <input type="number" id="habitaciones_disponibles" name="habitaciones_disponibles" required><br>
+
+        <label for="tarifa_noche">Tarifa por Noche:</label>
+        <input type="number" id="tarifa_noche" name="tarifa_noche" step="0.01" required><br>
+
+        <input type="submit" value="Registrar Hotel">
+    </form>
+</body>
+</html>

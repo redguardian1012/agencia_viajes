@@ -1,0 +1,16 @@
+.notifications-container {
+  background-color: #ffeb3b;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#disponibilidad {
+  margin-top: 20px;
+  color: #007bff;
+}
+
+.notifications-container div {
+  margin-bottom: 5px;
+}
